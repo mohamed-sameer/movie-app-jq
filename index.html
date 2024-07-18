@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon" />
+    <title>Movie App</title>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- mainstyle -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="side-menu d-flex flex-row-reverse">
+      <div
+        class="drawer d-flex flex-column justify-content-between align-items-center py-3"
+      >
+        <div class="text-center">
+          <img class="w-50" src="images/logo.png" alt="" />
+        </div>
+        <div>
+          <span class="menu-bars">
+            <i class="fa-solid fa-bars fs-5"></i>
+            <i class="fa-solid fa-xmark fs-5 d-none"></i>
+          </span>
+        </div>
+        <div>
+          <ul class="list-unstyled">
+            <li>
+              <span>
+                <i class="fa-solid fa-globe"></i>
+              </span>
+            </li>
+            <li>
+              <span>
+                <i class="fa-solid fa-share-nodes"></i>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <nav
+        class="py-3 d-flex flex-column justify-content-between align-items-center"
+      >
+        <ul
+          class="side-nav list-unstyled px-4 w-100 d-flex flex-column gap-3 overflow-hidden"
+        >
+          <li data-target="nowPlaying">Now Playing</li>
+          <li data-target="popular">Popular</li>
+          <li data-target="topRated">Top Rated</li>
+          <li data-target="trending">Trending</li>
+          <li data-target="upcomming">Upcoming</li>
+        </ul>
+        <div
+          class="d-flex flex-column justify-content-between align-items-center w-100"
+        >
+          <ul
+            class="list-unstyled d-flex justify-content-start align-items-center gap-3 w-100 px-4"
+          >
+            <li>
+              <span>
+                <i class="fa-brands fa-facebook-f"></i>
+              </span>
+            </li>
+            <li>
+              <span>
+                <i class="fa-brands fa-x-twitter"></i>
+              </span>
+            </li>
+            <li>
+              <span>
+                <i class="fa-solid fa-globe"></i>
+              </span>
+            </li>
+          </ul>
+          <div class="">
+            <p class="px-4">Copyright © 2022 All Rights Reserved.</p>
+            <p class="px-4">Craeted by <a href="#">Mohamed Samir</a></p>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main id="ContactWrapper" class="py-5">
+      <div class="search-bar text-center mb-3">
+        <input
+          class="py-2 px-3 w-50 bg-transparent rounded-pill text-white"
+          type="text"
+          name="query"
+          id="search"
+          placeholder="Search"
+        />
+      </div>
+      <section id="NowPlaying" class="">
+        <div class="container ps-5">
+          <div class="movies">
+            <div class="row g-4">
+              <div class="col-md-4">
+                <div class="movie-card rounded-2 overflow-hidden">
+                  <div class="movie-poster">
+                    <img class="w-100" src="images/movie.jpg" alt="" />
+                  </div>
+                  <div class="movie-layer p-3">
+                    <h2 class="h3 pb-2">My Spy: The Eternal City</h2>
+                    <p class="movie-desc">
+                      JJ, a veteran CIA agent, reunites with his protégé Sophie,
+                      in order to prevent a catastrophic nuclear plot targeting
+                      the Vatican.
+                    </p>
+                    <p>Relese Date:</p>
+                    <ul class="movie-raing">
+                      <li>start</li>
+                    </ul>
+                    <div class="rating-number">7.5</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- JQuery -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!-- main script -->
+    <script src="js/index.js"></script>
+  </body>
+</html>
