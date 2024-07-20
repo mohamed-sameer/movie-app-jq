@@ -61,9 +61,7 @@ body {
 #NowPlaying .movie-card .movie-poster img {
   transition: all 1s;
 }
-#NowPlaying .movie-layer h2 {
-  /* display: none; */
-}
+
 #NowPlaying .movie-layer .movie-desc {
   font-size: 14px;
 }
@@ -88,55 +86,21 @@ body {
   border-radius: 100px;
 }
 
-#ContactUS {
-  background-color: #111;
-  color: #fff;
-}
-
 .contact-us-title {
   font-size: 2.5em;
   margin-bottom: 30px;
 }
 
-.contact-us-form {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.contact-form-group {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.contact-form-control {
-  width: 48%;
-  margin-bottom: 15px;
-}
-
 .contact-input {
-  width: 100%;
   padding: 10px;
   background-color: transparent;
+  border-radius: 0;
   border: none;
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid #fff;
   color: #fff;
-  font-size: 1em;
-  transition: border-color 0.3s;
 }
 .contact-input::placeholder {
   color: #555;
-}
-.contact-input.error {
-  border-color: #ff0000;
-}
-
-.error-message {
-  color: #ff0000;
-  font-size: 0.8em;
-  display: block;
-  margin-top: 5px;
 }
 
 .contact-submit-btn {
@@ -144,18 +108,6 @@ body {
   color: #fff;
   border: none;
   padding: 10px 20px;
-  font-size: 1em;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
-}
-.contact-submit-btn.disabled {
-  background-color: #ff0000;
-  color: #fff;
-  cursor: not-allowed;
-}
-
-@media (max-width: 768px) {
-  .contact-form-control {
-    width: 100%;
-  }
 }

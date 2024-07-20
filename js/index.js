@@ -183,4 +183,72 @@ $(function () {
   });
 
   fetchAndDisplayMovies("nowPlaying");
+
+  function validation() {
+    const submitBtn = $(".contact-submit-btn");
+
+    $(".contact-us-form .contact-input").on("input", function () {
+      const nameInputRegx = /^[a-zA-z\s]{3,36}$/;
+      const emailInputRegx = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      const phoneInputRegx = /^(02)?(01)[0125][0-9]{8}$/;
+      const ageInputRegx = /^(1[6-9]|[2-9][0-9])$/;
+      const passwordInputRegx = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+      const nameErrorMsg = "Please enter a valid name";
+      const emailErrorMsg = "Please enter a valid email";
+      const phoneErrorMsg = "Please enter a valid phone number";
+      const ageErrorMsg = "Your age must be over 16+";
+      const passwordErrorMsg =
+        "Password must contain numbers & letters at least 8 characters";
+      const rePasswordErrorMsg = "Password does not match";
+
+      let regex;
+      let errorMsg;
+
+      switch ($(this).attr("type")) {
+        case "text":
+          regex = nameInputRegx;
+          errorMsg = nameErrorMsg;
+          break;
+        case "email":
+          regex = emailInputRegx;
+          errorMsg = emailErrorMsg;
+          break;
+        case "tel":
+          regex = phoneInputRegx;
+          errorMsg = phoneErrorMsg;
+          break;
+        case "number":
+          regex = ageInputRegx;
+          errorMsg = ageErrorMsg;
+          break;
+        case "password":
+          if ($(this).attr("placeholder") === "Enter Your Password") {
+            regex = passwordInputRegx;
+            errorMsg = passwordErrorMsg;
+          } else {
+            regex = new RegExp(`^${$("#password").val()}$`);
+            errorMsg = rePasswordErrorMsg;
+          }
+          break;
+      }
+
+      const inputVal = $(this).val();
+      const error = $(this).next(".text-danger");
+
+      if (!regex.test(inputVal)) {
+        if (error.length === 0) {
+          $(this).after(`<span class="text-danger">${errorMsg}</span>`);
+          submitBtn.css({ "background-color": "red" });
+        }
+      } else {
+        if (error.length > 0) {
+          error.remove();
+          submitBtn.css({ "background-color": "#000" });
+        }
+      }
+    });
+  }
+
+  validation();
 });
